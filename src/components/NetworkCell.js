@@ -1,21 +1,12 @@
-import { NetworkCell } from './NetworkCell.js'
+import Blits from '@lightningjs/blits'
 
-export default NetworkCell('NetworkCell', {
-  components: {
-    NetworkCell
-  },
-
+export default Blits.Component('NetworkCell', {
   template: `
-    <Element>
-      <Element w="340" h="80" color="#1e293b" :alpha="$alpha">
-         <Text content="CNN"/>
-      </Element>
-    </ELement>
+    <Element w="300" h="100" color="#000">
+      <Text x="32" y="32" :content="$networkName"/>
+      <Text align="right" x="240" y="32" :content="$number"/>
+    </Element>
   `,
 
-  state() {
-    return {
-      alpha: 0.5
-    }
-  }
+  props: ['networkName', 'number'],
 })

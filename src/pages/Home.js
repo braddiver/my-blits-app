@@ -10,7 +10,7 @@ export default Blits.Component('Home', {
   },
   template: `
     <Element w="1920" h="1080" color="#333">
-      <NetworkColumn x="200" y="200"/>
+      <NetworkColumn x="200" y="200" />
     </Element>
   `,
 })

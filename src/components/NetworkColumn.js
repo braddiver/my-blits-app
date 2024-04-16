@@ -1,25 +1,18 @@
 import Blits from '@lightningjs/blits'
+import NetworkCell from './NetworkCell.js'
 
-export default Blits.Component('Loading', {
+export default Blits.Component('NetworkColumn', {
+  components: {
+    NetworkCell
+  },
+
   template: `
     <Element>
-      <Element w="300" h="100" color="#000">
-        <Text x="32" y="32" :content="$network1"/>
-        <Text align="right" x="240" y="32" content="7"/>
-      </Element>
+      <NetworkCell networkName="ESPN" number="6" />
+      <NetworkCell y="100" networkName="CNN" number="7" />
+      <NetworkCell y="200" networkName="PIG" number="8" />
+      <NetworkCell y="300" networkName="NBC" number="9" />
+      <NetworkCell y="400" networkName="ABC" number="11" />
     </Element>
-  `,
-  state() {
-    return {
-      alpha: 0,
-      network1: 'CNN'
-    }
-  },
-  hooks: {
-    ready() {
-      this.$setInterval(() => {
-        this.network1 = this.network1 === 'CNN' ? 'ABC' : 'CNN'
-      }, 800)
-    },
-  },
+  `
 })
