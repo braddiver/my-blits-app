@@ -10,26 +10,21 @@ export default Blits.Component('NetworkColumn', {
 
   state() {
     return {
-      network0: '',
-      network1: '',
-      network2: '',
-      network3: '',
-      network4: '',
-      callSign0: '',
-      callSign1: '',
-      callSign2: '',
-      callSign3: '',
-      callSign4: '',
+      network0: { name: '', callSign: '' },
+      network1: { name: '', callSign: '' },
+      network2: { name: '', callSign: '' },
+      network3: { name: '', callSign: '' },
+      network4: { name: '', callSign: '' },
     }
   },
 
   template: `
     <Element>
-      <NetworkCell y="0"   :networkName="$network0" :number="$callSign0" />
-      <NetworkCell y="100" :networkName="$network1" :number="$callSign1" />
-      <NetworkCell y="200" :networkName="$network2" :number="$callSign2" />
-      <NetworkCell y="300" :networkName="$network3" :number="$callSign3" />
-      <NetworkCell y="400" :networkName="$network4" :number="$callSign4" />
+      <NetworkCell y="0"   :networkName="$network0.name" :number="$network0.callSign" />
+      <NetworkCell y="100" :networkName="$network1.name" :number="$network1.callSign" />
+      <NetworkCell y="200" :networkName="$network2.name" :number="$network2.callSign" />
+      <NetworkCell y="300" :networkName="$network3.name" :number="$network3.callSign" />
+      <NetworkCell y="400" :networkName="$network4.name" :number="$network4.callSign" />
     </Element>
   `,
 
@@ -37,8 +32,9 @@ export default Blits.Component('NetworkColumn', {
     update(index = 0) {
       for (let i = 0; i < 5; i++) {
         const [networkName, callSign] = this.networks[index + i];
-        this[`network${i}`] = networkName;
-        this[`callSign${i}`] = callSign;
+        const cell = this[`network${i}`];
+        cell.name = networkName;
+        cell.callSign = callSign;
       }
     },
   },
