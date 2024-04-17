@@ -45,7 +45,6 @@ export default Blits.Component('NetworkColumn', {
 
   hooks: {
     ready() {
-      console.log({networks: this.networks})
       this.update();
     }
   }
