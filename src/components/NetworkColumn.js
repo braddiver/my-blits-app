@@ -10,6 +10,7 @@ export default Blits.Component('NetworkColumn', {
 
   state() {
     return {
+      channelIndex: 0,
       foc: 0,
       network0: { name: '', callSign: '' },
       network1: { name: '', callSign: '' },
@@ -46,6 +47,10 @@ export default Blits.Component('NetworkColumn', {
 
   input: {
     up() {
+      if (this.foc === 0 && this.channelIndex > 0) {
+        this.update(-- this.channelIndex);
+      }
+
       if (this.foc > 0) {
         this.foc --;
         this.updateFocus();
@@ -53,7 +58,10 @@ export default Blits.Component('NetworkColumn', {
     },
 
     down() {
-      if (this.foc < 5) {
+      if (this.foc === 4 && this.channelIndex < this.networks.length - 5) {
+        this.update(++ this.channelIndex);
+      }
+      if (this.foc < 4) {
         this.foc ++;
         this.updateFocus();
       }

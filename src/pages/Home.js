@@ -10,8 +10,8 @@ export default Blits.Component('Home', {
   },
 
   template: `
-    <Element w="1920" h="1080" color="#333">
-      <NetworkColumn :networks="$networks" x="200" y="200" />
+    <Element w="1920" h="600" color="#333">
+      <NetworkColumn :networks="$networks" x="200" y="100" />
     </Element>
   `,
 
