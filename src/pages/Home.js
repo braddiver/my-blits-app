@@ -18,16 +18,16 @@ export default Blits.Component('Home', {
   hooks: {
     init() {
       this.networks = [
-        [ 'A', 7 ],
-        [ 'B', 8 ],
-        [ 'C', 9 ],
-        [ 'D', 10 ],
-        [ 'E', 11 ],
-        [ 'F', 12 ],
-        [ 'G', 13 ],
-        [ 'H', 14 ],
-        [ 'I', 15 ],
-        [ 'J', 16 ]
+        [ 'ABC', 7 ],
+        [ 'BOS', 8 ],
+        [ 'CNN', 9 ],
+        [ 'DIY', 10 ],
+        [ 'ESPN', 11 ],
+        [ 'FAR', 12 ],
+        [ 'GUT', 13 ],
+        [ 'HIT', 14 ],
+        [ 'ICE', 15 ],
+        [ 'JK', 16 ]
       ];
     }
   },
