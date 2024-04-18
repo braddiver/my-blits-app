@@ -10,9 +10,9 @@ export default Blits.Component('NetworkCell', {
   },
 
   template: `
-    <Element ref="el" w="300" h="100" :color="$color">
+    <Element ref="el" w="300" h="94" :color="$color">
       <Text x="32" y="32" :content="$networkName"/>
-      <Text align="right" x="240" y="32" :content="$number"/>
+      <Text font="raleway" size="22" wordwrap="30" align="right" x="240" y="32" :content="$number"/>
     </Element>
   `,
 

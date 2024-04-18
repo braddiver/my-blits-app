@@ -15,6 +15,20 @@ export default Blits.Component('Home', {
     </Element>
   `,
 
+  methods: {
+    createSign(length) {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          counter += 1;
+        }
+        return result;
+    }
+  },
+
   hooks: {
     init() {
       this.networks = [
@@ -29,6 +43,10 @@ export default Blits.Component('Home', {
         [ 'ICE', 15 ],
         [ 'JK', 16 ]
       ];
+
+      for (let i = 0; i < 1005; i++) {
+        this.networks.push([this.createSign(3), i + 16])
+      }
     }
   },
 });
