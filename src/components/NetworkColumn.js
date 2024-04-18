@@ -12,6 +12,8 @@ export default Blits.Component('NetworkColumn', {
     return {
       channelIndex: 0,
       foc: 0,
+      height: 78,
+      shim: 4,
       network0: { name: '', callSign: '' },
       network1: { name: '', callSign: '' },
       network2: { name: '', callSign: '' },
@@ -23,10 +25,10 @@ export default Blits.Component('NetworkColumn', {
   template: `
     <Element>
       <NetworkCell ref="el0" y="0"   :networkName="$network0.name" :number="$network0.callSign" />
-      <NetworkCell ref="el1" y="100" :networkName="$network1.name" :number="$network1.callSign" />
-      <NetworkCell ref="el2" y="200" :networkName="$network2.name" :number="$network2.callSign" />
-      <NetworkCell ref="el3" y="300" :networkName="$network3.name" :number="$network3.callSign" />
-      <NetworkCell ref="el4" y="400" :networkName="$network4.name" :number="$network4.callSign" />
+      <NetworkCell ref="el1" y="$height" :networkName="$network1.name" :number="$network1.callSign" />
+      <NetworkCell ref="el2" y="$height * 2" :networkName="$network2.name" :number="$network2.callSign" />
+      <NetworkCell ref="el3" y="$height * 3" :networkName="$network3.name" :number="$network3.callSign" />
+      <NetworkCell ref="el4" y="$height * 4" :networkName="$network4.name" :number="$network4.callSign" />
     </Element>
   `,
 

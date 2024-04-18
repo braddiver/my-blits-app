@@ -10,7 +10,7 @@ export default Blits.Component('Home', {
   },
 
   template: `
-    <Element w="1920" h="600" color="#333">
+    <Element w="1920" h="600" color="#777">
       <NetworkColumn :networks="$networks" x="200" y="100" />
     </Element>
   `,
@@ -45,7 +45,7 @@ export default Blits.Component('Home', {
       ];
 
       for (let i = 0; i < 1005; i++) {
-        this.networks.push([this.createSign(3), i + 16])
+        this.networks.push([this.createSign(3), i + 17])
       }
     }
   },
