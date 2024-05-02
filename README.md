@@ -8,7 +8,9 @@ https://lightningjs.io/v3-docs/blits/getting_started/getting_started.html
 NetworkColumn uses no animation or real "scrolling". Instead uses a fixed number of rows. As user presses up or down arrow key, the next 5 of 1000 items are used to update the elements' text properties.
 https://github.com/braddiver/my-blits-app/blob/main/src/components/NetworkColumn.js
 
-## Used as a demo to compare development in 2 Lightning3 frameworks
+![NetworkColumn](screenshot.jpg)
+
+## Used as a demo to compare development in Lightning 3 frameworks
 
 lightning-js/blits:
 https://lightningjs.io/v3-docs/blits/components/component_state.html
