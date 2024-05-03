@@ -14,31 +14,31 @@ export default Blits.Component('NetworkColumn', {
       foc: 0,
       height: 78,
       shim: 4,
-      network0: { name: '', callSign: '' },
-      network1: { name: '', callSign: '' },
-      network2: { name: '', callSign: '' },
-      network3: { name: '', callSign: '' },
-      network4: { name: '', callSign: '' },
+      network0: { sign: '', number: '' },
+      network1: { sign: '', number: '' },
+      network2: { sign: '', number: '' },
+      network3: { sign: '', number: '' },
+      network4: { sign: '', number: '' },
     }
   },
 
   template: `
     <Element>
-      <NetworkCell ref="el0" y="0"   :networkName="$network0.name" :number="$network0.callSign" />
-      <NetworkCell ref="el1" y="$height" :networkName="$network1.name" :number="$network1.callSign" />
-      <NetworkCell ref="el2" y="$height * 2" :networkName="$network2.name" :number="$network2.callSign" />
-      <NetworkCell ref="el3" y="$height * 3" :networkName="$network3.name" :number="$network3.callSign" />
-      <NetworkCell ref="el4" y="$height * 4" :networkName="$network4.name" :number="$network4.callSign" />
+      <NetworkCell ref="el0" y="0" :sign="$network0.sign" :number="$network0.number" />
+      <NetworkCell ref="el1" y="$height" :sign="$network1.sign" :number="$network1.number" />
+      <NetworkCell ref="el2" y="$height * 2" :sign="$network2.sign" :number="$network2.number" />
+      <NetworkCell ref="el3" y="$height * 3" :sign="$network3.sign" :number="$network3.number" />
+      <NetworkCell ref="el4" y="$height * 4" :sign="$network4.sign" :number="$network4.number" />
     </Element>
   `,
 
   methods: {
     update(index = 0) {
       for (let i = 0; i < 5; i++) {
-        const [networkName, callSign] = this.networks[index + i];
+        const [sign, number] = this.networks[index + i];
         const cell = this[`network${i}`];
-        cell.name = networkName;
-        cell.callSign = callSign;
+        cell.sign = sign;
+        cell.number = number;
       }
     },
 
