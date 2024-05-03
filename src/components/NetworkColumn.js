@@ -6,7 +6,7 @@ export default Blits.Component('NetworkColumn', {
     NetworkCell
   },
 
-  props: ['networks'],
+  props: ['channels'],
 
   state() {
     return {
@@ -14,29 +14,29 @@ export default Blits.Component('NetworkColumn', {
       foc: 0,
       height: 78,
       shim: 4,
-      network0: { sign: '', number: '' },
-      network1: { sign: '', number: '' },
-      network2: { sign: '', number: '' },
-      network3: { sign: '', number: '' },
-      network4: { sign: '', number: '' },
+      channel0: { sign: '', number: '' },
+      channel1: { sign: '', number: '' },
+      channel2: { sign: '', number: '' },
+      channel3: { sign: '', number: '' },
+      channel4: { sign: '', number: '' },
     }
   },
 
   template: `
     <Element>
-      <NetworkCell ref="el0" y="0" :sign="$network0.sign" :number="$network0.number" />
-      <NetworkCell ref="el1" y="$height" :sign="$network1.sign" :number="$network1.number" />
-      <NetworkCell ref="el2" y="$height * 2" :sign="$network2.sign" :number="$network2.number" />
-      <NetworkCell ref="el3" y="$height * 3" :sign="$network3.sign" :number="$network3.number" />
-      <NetworkCell ref="el4" y="$height * 4" :sign="$network4.sign" :number="$network4.number" />
+      <NetworkCell ref="el0" y="0" :sign="$channel0.sign" :number="$channel0.number" />
+      <NetworkCell ref="el1" y="$height" :sign="$channel1.sign" :number="$channel1.number" />
+      <NetworkCell ref="el2" y="$height * 2" :sign="$channel2.sign" :number="$channel2.number" />
+      <NetworkCell ref="el3" y="$height * 3" :sign="$channel3.sign" :number="$channel3.number" />
+      <NetworkCell ref="el4" y="$height * 4" :sign="$channel4.sign" :number="$channel4.number" />
     </Element>
   `,
 
   methods: {
     update(index = 0) {
       for (let i = 0; i < 5; i++) {
-        const [sign, number] = this.networks[index + i];
-        const cell = this[`network${i}`];
+        const [sign, number] = this.channels[index + i];
+        const cell = this[`channel${i}`];
         cell.sign = sign;
         cell.number = number;
       }
@@ -60,7 +60,7 @@ export default Blits.Component('NetworkColumn', {
     },
 
     down() {
-      if (this.foc === 4 && this.channelIndex < this.networks.length - 5) {
+      if (this.foc === 4 && this.channelIndex < this.channels.length - 5) {
         this.update(++ this.channelIndex);
       }
       if (this.foc < 4) {

@@ -11,7 +11,7 @@ export default Blits.Component('Home', {
 
   template: `
     <Element w="1920" h="500" color="#777">
-      <NetworkColumn :networks="$networks" x="200" y="55" />
+      <NetworkColumn :channels="$channels" x="200" y="55" />
     </Element>
   `,
 
@@ -31,7 +31,7 @@ export default Blits.Component('Home', {
 
   hooks: {
     init() {
-      this.networks = [
+      this.channels = [
         [ 'ABC', 7 ],
         [ 'BOS', 8 ],
         [ 'CNN', 9 ],
@@ -45,7 +45,7 @@ export default Blits.Component('Home', {
       ];
 
       for (let i = 0; i < 1005; i++) {
-        this.networks.push([this.createSign(3), i + 17])
+        this.channels.push([this.createSign(3), i + 17])
       }
     }
   },
