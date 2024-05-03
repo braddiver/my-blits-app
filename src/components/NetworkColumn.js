@@ -13,7 +13,6 @@ export default Blits.Component('NetworkColumn', {
       channelIndex: 0,
       focusIndex: 0,
       height: 78,
-      shim: 4,
       channel0: { sign: '', number: '' },
       channel1: { sign: '', number: '' },
       channel2: { sign: '', number: '' },
