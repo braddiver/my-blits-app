@@ -11,7 +11,7 @@ export default Blits.Component('NetworkColumn', {
   state() {
     return {
       channelIndex: 0,
-      foc: 0,
+      focusIndex: 0,
       height: 78,
       shim: 4,
       channel0: { sign: '', number: '' },
@@ -43,28 +43,28 @@ export default Blits.Component('NetworkColumn', {
     },
 
     updateFocus() {
-      this.select(`el${this.foc}`).focus();
+      this.select(`el${this.focusIndex}`).focus();
     }
   },
 
   input: {
     up() {
-      if (this.foc === 0 && this.channelIndex > 0) {
+      if (this.focusIndex === 0 && this.channelIndex > 0) {
         this.update(-- this.channelIndex);
       }
 
-      if (this.foc > 0) {
-        this.foc --;
+      if (this.focusIndex > 0) {
+        this.focusIndex --;
         this.updateFocus();
       }
     },
 
     down() {
-      if (this.foc === 4 && this.channelIndex < this.channels.length - 5) {
+      if (this.focusIndex === 4 && this.channelIndex < this.channels.length - 5) {
         this.update(++ this.channelIndex);
       }
-      if (this.foc < 4) {
-        this.foc ++;
+      if (this.focusIndex < 4) {
+        this.focusIndex ++;
         this.updateFocus();
       }
     }
